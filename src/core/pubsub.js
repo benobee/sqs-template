@@ -1,4 +1,4 @@
-class Events {
+class PubSub {
     constructor () {
         this.topics = {};
     }
@@ -22,4 +22,4 @@ class Events {
     }
 }
 
-export default Events;
+export default PubSub;

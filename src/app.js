@@ -1,22 +1,17 @@
-import controller from "./core/controller";
-import Events from "./core/events";
+import Controller from "./core/controller";
 
 const App = {
     init () {
-        controller.init();
-        Events.on("app-loaded", () => {
-            console.log("app loaded");
+        this.blog = new Controller("blog", {
+            el: ".blog",
+            rendered (el) {
+                // run code
+                console.log("hello blog", el);
+            }
         });
-        Events.emit("app-loaded");
-    },
-    cacheDOM () {
-
-    },
-    execute () {
-
     }
 };
 
-window._CustomProductViewApp = App;
-
-App.init();
+document.addEventListener("DOMContentLoaded", () => {
+    App.init();
+});

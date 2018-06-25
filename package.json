@@ -27,6 +27,7 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-runtime": "^6.23.0",
+    "css-loader": "^0.28.7",
     "es6-promise": "^4.1.1",
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.0.2",
@@ -40,20 +41,20 @@
     "eslint-watch": "^3.0.1",
     "exports-loader": "^0.6.4",
     "extract-text-webpack-plugin": "^3.0.1",
+    "github-release-cli": "^0.3.0",
+    "html-loader": "^0.5.1",
     "imports-loader": "^0.7.1",
     "json-loader": "^0.5.4",
-    "html-loader": "^0.5.1",
     "less": "^2.7.1",
     "less-loader": "^4.0.5",
-    "css-loader": "^0.28.7",
     "path": "^0.12.7",
     "postcss-loader": "^2.0.7",
     "postcss-smart-import": "^0.7.5",
     "style-loader": "^0.19.0",
     "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony",
     "webpack": "^3.7.1",
-    "webpack-dev-server": "^2.9.1",
-    "github-release-cli": "^0.3.0"
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^2.9.1"
   },
   "dependencies": {
     "documentation": "^6.3.2"

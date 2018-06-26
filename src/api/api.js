@@ -1,12 +1,10 @@
-import controller from "../core/controller";
-import scrollControl from "../modules/scrollControl";
-import navigation from "../modules/navigation";
+//import controller from "../core/controller";
 
 /**
  * abstracted out for readability
- * @example 
+ * @example
  * controller.on("navbar", (el) => {
- *   navbar.init(); 
+ *   navbar.init();
  * });
  */
 

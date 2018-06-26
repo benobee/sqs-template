@@ -1,6 +1,6 @@
 const isProduction = JSON.parse(process.env.PROD_ENV ? true : false);
 const webpack = require("webpack");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const plugins = [];
 /*********************/
@@ -17,8 +17,11 @@ isProduction ? plugins.push(nodeENV) : false;
 /*****************************/
 
 // @plugin: compile all less files into master CSS
-const CSSBundle = new ExtractTextPlugin({
-    filename: "bundle.css"
+const CSSBundle = new MiniCssExtractPlugin({
+    // Options similar to the same options in webpackOptions.output
+    // both options are optional
+    filename: "bundle.css",
+    chunkFilename: "[id].css"
 });
 
 plugins.push(CSSBundle);
@@ -67,22 +70,22 @@ if (isProduction) {
     plugins.push(vueComponents);
 }
 
-// @plugin: for minifying javascript
-const minify = new webpack.optimize.UglifyJsPlugin({
-    compress: {
-        warnings: false
-    },
-    output: {
-        comments: isProduction ? false : true,
-    },
-    minimize: isProduction ? true : false,
-    debug: false,
-    sourceMap: true,
-    minify: isProduction ? true : false,
-});
+// // // @plugin: for minifying javascript
+// const minify = new webpack.optimize.UglifyJsPlugin({
+//     compress: {
+//         warnings: false
+//     },
+//     output: {
+//         comments: isProduction ? false : true,
+//     },
+//     minimize: isProduction ? true : false,
+//     debug: false,
+//     sourceMap: true,
+//     minify: isProduction ? true : false,
+// });
 
-//if production is set, js will be minified
-plugins.push(minify);
+// //if production is set, js will be minified
+// plugins.push(minify);
 
 module.exports = {
     plugins

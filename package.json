@@ -10,7 +10,7 @@
         "build": "webpack -p --config ./config/webpack/webpack.prod.js&&documentation build --output ./README.md --format md",
         "dev": "concurrently \"webpack-dev-server ./main.js --hot --watch --colors --open --config ./config/webpack/webpack.dev.js\" \"documentation build --output ./README.md --format md\"",
         "debug": "node --inspect --debug-brk ./src/app.js",
-        "sqs": ""
+        "sqs": "squarespace-server https://DOMAIN.squarespace.com --auth -d ./template"
     },
     "babel": {
         "presets": [

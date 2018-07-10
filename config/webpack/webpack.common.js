@@ -4,7 +4,7 @@ const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 
-module.exports = merge(rules, {
+const config = merge(rules, {
     context: __dirname,
     entry: ['../../main.js', '../../main.less'],
     node: {
@@ -40,3 +40,5 @@ module.exports = merge(rules, {
         filename: "bundle.js"
     }
 });
+
+module.exports = config;

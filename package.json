@@ -4,11 +4,12 @@
     "description": "",
     "main": "main.js",
     "scripts": {
-      "test": "mocha",
-        "start": "webpack --progress --colors --watch --open --config ./config/webpack/webpack.dev.js&&documentation build --output ./README.md --format md",
+        "test": "mocha",
+        "start": "concurrently \"webpack --progress --colors --watch --open --config ./config/webpack/webpack.dev.js\" \"npm run debug\"",
         "watch": "./node_modules/.bin/webpack -d --watch --colors",
         "build": "webpack -p --config ./config/webpack/webpack.prod.js&&documentation build --output ./README.md --format md",
-        "dev": "webpack-dev-server ./main.js --hot --watch --colors --open --config ./config/webpack/webpack.dev.js&&documentation build --output ./README.md --format md"
+        "dev": "concurrently \"webpack-dev-server ./main.js --hot --watch --colors --open --config ./config/webpack/webpack.dev.js\" \"documentation build --output ./README.md --format md\"",
+        "debug": "node --inspect --debug-brk ./src/app.js"
     },
     "babel": {
         "presets": [
@@ -28,6 +29,7 @@
         "babel-polyfill": "^6.23.0",
         "babel-preset-env": "^1.6.0",
         "babel-runtime": "^6.23.0",
+        "concurrently": "^3.6.0",
         "css-loader": "^0.28.7",
         "documentation": "^8.0.0",
         "es6-promise": "^4.1.1",

@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = {
+const rules = {
     module: {
         rules: [
             // @rule: JS
@@ -48,3 +48,5 @@ module.exports = {
         ]
     }
 }
+
+module.exports = rules;

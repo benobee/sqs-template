@@ -65,8 +65,6 @@ Returns **[NodeList][16]**
 
 ## api
 
-abstracted out for readability
-
 ### Examples
 
 ```javascript

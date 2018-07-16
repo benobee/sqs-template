@@ -4,7 +4,6 @@ const plugins = require("./util/plugins.js")
 
 const config = merge(rules, {
     context: __dirname,
-    entry: ['../../main.js', '../../main.less'],
     node: {
         dns: 'mock',
         net: 'mock',
@@ -17,12 +16,7 @@ const config = merge(rules, {
             'vue': 'vue/dist/vue.min.js'
         }
     },
-    plugins,
-    output: {
-        publicPath: '/',
-        path: __dirname + "../../../template/assets",
-        filename: "bundle.js"
-    }
+    plugins
 });
 
 module.exports = config;

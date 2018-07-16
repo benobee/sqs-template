@@ -1,12 +1,6 @@
 const webpack = require("webpack");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const MinifyPlugin = require("babel-minify-webpack-plugin");
 
 const plugins = [
-    new MiniCssExtractPlugin({
-        filename: "bundle.css",
-        chunkFilename: "[id].css"
-    }),
     new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",

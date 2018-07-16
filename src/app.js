@@ -13,18 +13,18 @@ const App = {
      */
     registerAPIControllers () {
         controller.watch([{
-                name: "blog",
-                el: "#collection-5a81023c53450a498144b8d7"
-            },
-            {
-                name: "navbar",
-                el: ".Header.Header--top"
-            }
-        ]);
+            name: "root",
+            el: "#main"
+        }]);
     }
 };
 
 // on dom content load
 document.addEventListener("DOMContentLoaded", () => {
+    const root = document.createElement("div");
+
+    root.id = "main";
+
+    document.querySelector("body").appendChild(root);
     App.init();
 });

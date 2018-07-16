@@ -1,9 +1,6 @@
 const merge = require('webpack-merge');
 const rules = require("./util/rules.js");
-const webpack = require("webpack");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const MinifyPlugin = require("babel-minify-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin")
+const plugins = require("./util/plugins.js")
 
 const config = merge(rules, {
     context: __dirname,
@@ -20,24 +17,7 @@ const config = merge(rules, {
             'vue': 'vue/dist/vue.min.js'
         }
     },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: "bundle.css",
-            chunkFilename: "[id].css"
-        }),
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery"
-        }),
-        new webpack.ProvidePlugin({
-            'Promise': 'es6-promise',
-            'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-        }),
-        new HtmlWebpackPlugin({
-            filename: "../../test/index.html"
-        })
-    ],
+    plugins,
     output: {
         publicPath: '/',
         path: __dirname + "../../../template/assets",

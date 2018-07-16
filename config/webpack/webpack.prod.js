@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const optimization = require("./components/optimization.js");
+const optimization = require("./util/optimization.js");
 
 const config = merge(common, optimization, {
     mode: 'production',

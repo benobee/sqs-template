@@ -2017,6 +2017,12 @@ component-emitter@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
 
+component-literal@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/component-literal/-/component-literal-1.5.3.tgz#9778896e16c50396924958674c9c9b0caeaba144"
+  dependencies:
+    morphdom "^2.3.2"
+
 compressible@~2.0.13:
   version "2.0.14"
   resolved "https://registry.yarnpkg.com/compressible/-/compressible-2.0.14.tgz#326c5f507fbb055f54116782b969a81b67a29da7"
@@ -5006,6 +5012,10 @@ module-deps-sortable@4.0.6:
     subarg "^1.0.0"
     through2 "^2.0.0"
     xtend "^4.0.0"
+
+morphdom@^2.3.2:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/morphdom/-/morphdom-2.3.3.tgz#70b0aec3db0832688f7fcbde2a8921cf508c4f16"
 
 move-concurrently@^1.0.1:
   version "1.0.1"

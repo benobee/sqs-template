@@ -19,13 +19,13 @@ const config = merge(common, optimization, {
                 'less-loader',
                 {
                     loader: 'postcss-loader',
-                    options: { config: { path: './config/postcss.config.js' } },
+                    options: { config: { path: './build-tools/postcss.config.js' } },
                 }
             ]
         }]
     },
     plugins: [
-        new UglifyJSPlugin(),
+        // new UglifyJSPlugin(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
